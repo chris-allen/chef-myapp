@@ -37,8 +37,8 @@ git "/home/#{user}/myapp" do
   ssh_wrapper "/home/#{user}/git_wrapper.sh"
 end
 
-template "/home/#{user}/myapp/myapp/local-config.py" do
-  source "/home/#{user}/myapp/myapp/local-config-sample.py"
+template "/home/#{user}/myapp/myapp/local-config.php" do
+  source "/home/#{user}/myapp/myapp/local-config-sample.php"
   local true
   mode 0755
   variables( :config => config )
