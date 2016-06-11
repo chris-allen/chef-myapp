@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+    ServerName <%= @params[:server_name] %>
+    ServerAlias *
+    
+    DocumentRoot "<%= @params[:docroot] %>"
+    <Directory "<%= @params[:docroot] %>">
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+        Require all granted
+    </Directory>
+    <Files xmlrpc.php>
+        order deny,allow
+        deny from all
+    </Files>
+    ErrorLog "${APACHE_LOG_DIR}/error.log"
+    CustomLog "${APACHE_LOG_DIR}/access.log" combined
+</VirtualHost>
