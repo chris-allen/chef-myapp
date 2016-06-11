@@ -14,3 +14,4 @@ include_recipe "php::module_mysql"
 
 package "git"
 package "sendmail"
+package "libapache2-mod-php5"
