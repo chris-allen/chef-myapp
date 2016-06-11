@@ -8,10 +8,11 @@
 #
 
 
-include_recipe "apt"
+execute "apt-get update" do
+  action :nothing
+end.run_action(:run)
 include_recipe "php"
 include_recipe "php::module_mysql"
 
 package "git"
 package "sendmail"
-package "libapache2-mod-php5"
