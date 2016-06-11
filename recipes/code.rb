@@ -29,7 +29,7 @@ file "/home/#{user}/git_wrapper.sh" do
 end
 
 log 'message' do
-  message 'GITURL: #{git_url}'
+  message "GITURL: #{git_url}"
   level :info
 end
 
