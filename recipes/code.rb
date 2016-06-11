@@ -28,9 +28,15 @@ file "/home/#{user}/git_wrapper.sh" do
   content "#!/bin/sh\nexec ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i \"/home/#{user}/.ssh/id_rsa\" \"$@\""
 end
 
+log 'message' do
+  message 'GITURL: #{git_url}'
+  level :info
+end
+
 git "/home/#{user}/myapp" do
   repository "#{git_url}"
   reference "#{git_revision}" # branch
+  enable_submodules true   # init submodules
   action :sync
   user "#{user}"
   group "#{user}"
