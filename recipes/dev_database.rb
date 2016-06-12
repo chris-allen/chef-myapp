@@ -6,10 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 
-# include_recipe "mysql"
-# include_recipe "mysql2_chef_gem"
-# include_recipe "database::mysql"
-
 mysql2_chef_gem 'default' do
   action :install
 end
