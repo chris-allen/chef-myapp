@@ -1,42 +1,29 @@
-# chef-myapp-cookbook
+# chef-myapp
 
-TODO: Enter the cookbook description here.
+This cookbook is designed for use in both production and development environments.  It can be used locally leveraging the Berkshelf vagrant plugin and on AWS using an OpsWorks stack.
 
-## Supported Platforms
+## Recipes
 
-TODO: List your supported platforms.
+### system
+This recipe installs all system-level dependencies.
 
-## Attributes
+### server
+This recipe installs and configures `apache2`.
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['chef-myapp']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+### code
+This recipe fetches the source of the application and configures the application based on environment variables set by the OpsWorks application.  _It is intended to be run only on OpsWorks._
 
-## Usage
+### dev_database
+This recipe simply installs MySQL and creates a database with hardcoded credentials.  It is intended for development purposes only.
 
-### chef-myapp::default
-
-Include `chef-myapp` in your node's `run_list`:
-
-```json
-{
-  "run_list": [
-    "recipe[chef-myapp::default]"
-  ]
-}
-```
+### wordpress
+This recipe assumes the application source exists and sets up the uploads directory.
 
 ## License and Authors
+Copyright (C) APAX Software Development, LLC - All Rights Reserved
 
-Author:: Chris Allen (<chris@apaxsoftware.com>)
+Unauthorized copying of this file, via any medium is strictly prohibited
+
+Proprietary and confidential
+
+Written by Chris Allen <chris@apaxsoftware.com>, June 2016
