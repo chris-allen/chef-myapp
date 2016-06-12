@@ -36,8 +36,3 @@ end
 service "apache2" do
   action :restart
 end
-
-directory "/home/#{user}/myapp/myapp/shared/content/uploads" do
-  recursive true
-  mode 0777
-end
