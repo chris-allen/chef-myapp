@@ -14,3 +14,6 @@ include_recipe "php::module_mysql"
 
 package "git"
 package "sendmail"
+package "imagemagick"
+package "php5-curl"
+package "php5-imagick"
