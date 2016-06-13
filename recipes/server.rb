@@ -19,7 +19,7 @@ end
 
 if Dir.exists? "/home/vagrant"
   user = "vagrant"
-  domain = "localhost"
+  domain = "localhost:8080"
 else
   user = "ubuntu"
   app = search("aws_opsworks_app").first
